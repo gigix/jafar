@@ -1,0 +1,14 @@
+{
+    "name": "jafar",
+    "description": "A JSON schema validation tool for HL7 FHIR JSON representation",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt": "0.4.1",
+        "grunt-cli" : "*",
+        "grunt-jasmine-node": "*",
+        "jasmine-node" : "*"
+    },
+    "dependencies": {
+        "jayschema": "~0.2.1"
+    }
+}

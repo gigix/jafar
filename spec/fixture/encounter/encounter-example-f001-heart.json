@@ -1,0 +1,88 @@
+{"resourceType": "Encounter", "identifier": [
+    {
+        "use": "official",
+        "system": "http://www.amc.nl/zorgportal/identifiers/visits",
+        "value": "v1451"
+    }
+], "status": "finished", "class": "outpatient", "type": [
+    {
+        "coding": [
+            {
+                "system": "http://snomed.info/id",
+                "code": "Patient-initiated encounter",
+                "display": "270427003"
+            }
+        ]
+    }
+], "subject": {
+    "reference": "Patient/f001",
+    "display": "P. van de Heuvel"
+}, "participant": [
+    {
+        "individual": {
+            "reference": "Practitioner/f002",
+            "display": "P. Voigt"
+        }
+    }
+], "length": {
+    "value": "140",
+    "units": "min",
+    "system": "http://unitsofmeasure.org",
+    "code": "min"
+}, "reason": {
+    "coding": [
+        {
+            "system": "http://snomed.info/id",
+            "code": "34068001",
+            "display": "Heart valve replacement"
+        }
+    ]
+}, "priority": {
+    "coding": [
+        {
+            "system": "http://snomed.info/id",
+            "code": "310361003",
+            "display": "Non-urgent cardiological admission"
+        }
+    ]
+}, "hospitalization": {
+    "preAdmissionIdentifier": {
+        "use": "official",
+        "system": "http://www.amc.nl/zorgportal/identifiers/pre-admissions",
+        "value": "93042"
+    },
+    "admitSource": {
+        "coding": [
+            {
+                "system": "http://snomed.info/id",
+                "code": "Referral by physician",
+                "display": "305956004"
+            }
+        ]
+    },
+    "period": {
+        "start": "2011-06-26",
+        "end": "2011-06-30"
+    },
+    "accomodation": [
+        {
+            "period": {
+                "start": "2011-06-26",
+                "end": "2011-07-01"
+            }
+        }
+    ],
+    "dischargeDisposition": {
+        "coding": [
+            {
+                "system": "http://snomed.info/id",
+                "code": "Discharge to home",
+                "display": "306689006"
+            }
+        ]
+    },
+    "reAdmission": false
+}, "serviceProvider": {
+    "reference": "Organization/f001",
+    "display": "Burgers University Medical Center"
+}}
