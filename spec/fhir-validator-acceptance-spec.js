@@ -10,7 +10,7 @@ describe("FHIR JSON validator acceptance", function () {
 
     function validateAllFixtures(resourceName) {
         describe(resourceName, function () {
-            var fixtureDir = __dirname + '/fixture/' + resourceName;
+            var fixtureDir = __dirname + '/fixture/' + resourceName.toLowerCase();
             var allFixtureFileNames = fs.readdirSync(fixtureDir);
             allFixtureFileNames.forEach(function (fixtureFilename) {
                 it("validates " + resourceName + " document in file [ " + fixtureFilename + " ]", function () {
