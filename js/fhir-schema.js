@@ -1,4 +1,4 @@
-exports.patient = {
+exports.Patient = {
     definitions: {
         DateTime: {
             id: 'DateTime',
@@ -166,6 +166,10 @@ exports.patient = {
             id: 'Patient',
             type: 'object',
             properties: {
+                resourceType: {
+                    type: 'string',
+                    pattern: 'Patient'
+                },
                 identifier: {
                     type: 'array',
                     minItems: 1,
@@ -214,9 +218,27 @@ exports.patient = {
                 contact: {
                     type: 'array',
                     items: {'$ref': 'ContactPerson'}
-                }
+                },
+                required: ['resourceType']
             }
         }
     },
     '$ref': 'Patient'
+};
+
+exports.Encounter = {
+    definitions: {
+        Encounter: {
+            id: 'Encounter',
+            type: 'object',
+            properties: {
+                resourceType: {
+                    type: 'string',
+                    pattern: 'Encounter'
+                },
+                required: ['resourceType']
+            }
+        }
+    },
+    '$ref': 'Encounter'
 };
