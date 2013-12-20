@@ -23,6 +23,6 @@ function resourceNames() {
 }
 
 resourceNames().forEach(function (resourceName) {
-    var resourceDefinition = require(definitionsPath() + '/' + resourceName).definition;
+    var resourceDefinition = require(definitionsPath() + '/' + resourceName.toLowerCase()).definition;
     exports[resourceName] = resourceSchema(resourceName, resourceDefinition);
 });
