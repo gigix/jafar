@@ -1,39 +1,39 @@
 exports.definition = {
     DateTime: {
         id: 'DateTime',
-            type: 'string',
-            format: 'date'
+        type: 'string',
+        format: 'date'
     },
     URI: {
         id: 'URI',
-            type: 'string',
-            format: 'uri'
+        type: 'string',
+        format: 'uri'
     },
     ArrayOfString: {
         id: 'ArrayOfString',
-            type: 'array',
-            items: {type: 'string'}
+        type: 'array',
+        items: {type: 'string'}
     },
     Extension: {
         id: 'Extension',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             value: {type: 'any'}
         }
     },
     ValueSet: {
         id: 'ValueSet',
-            type: 'object'
+        type: 'object'
         // TODO: unimplemented yet
     },
     Code: {
         id: 'Code',
-            type: 'string'
+        type: 'string'
         // TODO: Code specific validation logic
     },
     Coding: {
         id: 'Coding',
-            properties: {
+        properties: {
             system: {'$ref': 'URI'},
             version: {type: 'string'},
             code: {'$ref': 'Code'},
@@ -44,35 +44,43 @@ exports.definition = {
     },
     CodeableConcept: {
         id: 'CodeableConcept',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             coding: {
                 type: 'array',
-                    items: {'$ref': 'Coding'}
+                items: {'$ref': 'Coding'}
             },
             text: {type: 'string'}
         }
     },
     Period: {
         id: 'Period',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             start: {'$ref': 'DateTime'},
             end: {'$ref': 'DateTime'}
         }
     },
+    Range: {
+        id: 'Range',
+        type: 'object',
+        properties: {
+            low: {type: 'number'},
+            high: {type: 'number'}
+        }
+    },
     ResourceRef: {
         id: 'ResourceRef',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             reference: {type: 'string'},
             display: {type: 'string'}
         }
     },
     Identifier: {
         id: 'Identifier',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             use: {'$ref': 'Code'},
             label: {type: 'string'},
             system: {'$ref': 'URI'},
@@ -83,7 +91,7 @@ exports.definition = {
     },
     HumanName: {
         id: 'HumanName',
-            properties: {
+        properties: {
             use: {'$ref': 'Code'},
             text: {type: 'string'},
             family: {'$ref': 'ArrayOfString'},
@@ -95,8 +103,8 @@ exports.definition = {
     },
     Contact: {
         id: 'Contact',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             system: {'$ref': 'Code'},
             value: {type: 'string'},
             use: {'$ref': 'Code'},
@@ -105,13 +113,13 @@ exports.definition = {
     },
     Address: {
         id: 'Address',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             use: {'$ref': 'Code'},
             text: {type: 'string'},
             line: {
                 type: 'array',
-                    items: {type: 'string'}
+                items: {type: 'string'}
             },
             city: {type: 'string'},
             state: {type: 'string'},
@@ -122,39 +130,39 @@ exports.definition = {
     },
     Language: {
         id: 'Language',
-            '$ref': 'CodeableConcept'
+        '$ref': 'CodeableConcept'
     },
     AdministrativeGender: {
         id: 'AdministrativeGender',
-            '$ref': 'CodeableConcept'
+        '$ref': 'CodeableConcept'
     },
     MaritalStatus: {
         id: 'MaritalStatus',
-            '$ref': 'CodeableConcept'
+        '$ref': 'CodeableConcept'
     },
     ContactRelationship: {
         id: 'ContactRelationship',
-            '$ref': 'CodeableConcept'
+        '$ref': 'CodeableConcept'
     },
     Attachment: {
         id: 'Attachment',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             //TODO: unimplemented yet
         }
     },
     ContactPerson: {
         id: 'ContactPerson',
-            type: 'object',
-            properties: {
+        type: 'object',
+        properties: {
             relationship: {
                 type: 'array',
-                    items: {'$ref': 'ContactRelationship'}
+                items: {'$ref': 'ContactRelationship'}
             },
             name: {'$ref': 'HumanName'},
             telecom: {
                 type: 'array',
-                    items: {'$ref': 'Contact'}
+                items: {'$ref': 'Contact'}
             },
             address: {'$ref': 'Address'},
             gender: {'$ref': 'AdministrativeGender'},
